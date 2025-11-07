@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action="{% url 'edit' std_obj.id %}" method="POST">
+    {% csrf_token %}
+    <label for="">firstname</label>
+    <input type="text" name="firstname" value="{{std_obj.first_name}}" class="form-control" required>
+    <label for="">lastname</label>
+    <input type="text" name="lastname" value="{{std_obj.last_name}}" class="form-control" required>
+    <label for="">age</label>
+    <input type="text" name="age" value="{{std_obj.age}}" class="form-control" required>
+    <label for="">email</label>
+    <input type="text" name="email" id="" value="{{std_obj.email}}" class="form-control" required>
+    <label for="">PH NO:</label>
+    <input type="int" name="PH NO:" id="" value="{{std_obj.ph_number}}" class="form-control" required>
+    <button type="submit">submit</button>
+   </form>
+   <a href="{% url 'vieww' %}">back</a>
+</body>
+</html>
